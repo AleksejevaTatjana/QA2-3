@@ -1,12 +1,10 @@
 package model;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
 import java.util.List;
 
 public class Response {
     private Coord coord;
-
     private Wind wind;
     private Clouds clouds;
     private Sys sys;
@@ -17,22 +15,13 @@ public class Response {
     private BigDecimal visibility;
     private String base;
     private BigDecimal dt;
-    private Weather weather;
+    private List<Weather> weather;
 
-    public void getWeatherList() {
-        List<String> list = new ArrayList();
-
-        list.equals(getWeather().getId());
-        list.equals(getWeather().getMain());
-        list.equals(getWeather().getDescription());
-        list.equals(getWeather().getIcon());
-    }
-
-    public Weather getWeather() {
+    public List<Weather> getWeather() {
         return weather;
     }
 
-    public void setWeather(Weather weather) {
+    public void setWeather(List<Weather> weather) {
         this.weather = weather;
     }
 
@@ -126,8 +115,6 @@ public class Response {
     public void setCod(BigDecimal cod) {
         this.cod = cod;
     }
-
-
 }
 
 

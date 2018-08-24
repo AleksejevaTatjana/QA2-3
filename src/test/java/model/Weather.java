@@ -1,11 +1,13 @@
 package model;
 
+import java.math.BigDecimal;
+
 public class Weather {
-    private String id;
+
+    private BigDecimal id;
     private String main;
     private String description;
     private String icon;
-
 
     public String getMain() {
         return main;
@@ -31,11 +33,12 @@ public class Weather {
         this.icon = icon;
     }
 
-    public String getId() {
+    public BigDecimal getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(BigDecimal id) {
         this.id = id;
     }
 }
+

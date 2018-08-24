@@ -1,12 +1,10 @@
 package cucumberStepDefinitions;
-
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import model.Response;
-
 import java.math.BigDecimal;
-
+import java.util.Map;
 import static org.junit.Assert.*;
 
 public class WeatherStepDefs {
@@ -21,82 +19,82 @@ public class WeatherStepDefs {
 
     @Then("lon is (.*)")
     public void check_lon(BigDecimal lon) {
-        assertEquals("Wrong LON", lon, response.getCoord().getLon());
+        assertEquals("wrong lon", lon, response.getCoord().getLon());
     }
 
     @And("lat is (.*)")
     public void check_lat(BigDecimal lat) {
-        assertEquals("Wrong LAT", lat, response.getCoord().getLat());
+        assertEquals("wrong lat", lat, response.getCoord().getLat());
     }
 
 
-   @Then("weather following data is")
-       public void check_weather_data (String weather){
-           assertEquals ("Wrong weather data", weather, response.getWeatherList());
-
-       }
+    @And("weather following data is")
+    public void check_weather_data(Map<String, String> params) {
+        assertEquals(new BigDecimal(params.get("wrong weather id")), response.getWeather().get(0).getId());
+        assertEquals(params.get("wrong weather main"), response.getWeather().get(0).getMain());
+        assertEquals(params.get("wrong weather description"), response.getWeather().get(0).getDescription());
+        assertEquals(params.get(" wrong weather icon"), response.getWeather().get(0).getIcon());
+    }
 
     @And("base is (.*)")
     public void check_base(String base) {
         assertEquals("Wrong base", base, response.getBase());
     }
 
-
-    @Then("^the main temp is (\\\\d+)\\\\.(\\\\d+) and pressure is (\\\\d+) the humidity is (\\\\d+) and temp_min is (\\\\d+)\\\\.(\\\\d+) and temp_max is (\\\\d+)\\\\.(\\\\d+)$")
-    public void check_main(BigDecimal temp, BigDecimal pressure, BigDecimal humidity, BigDecimal temp_min, BigDecimal temp_max) {
-        assertEquals("Wrong temp", temp, response.getMain().getTemp());
-        assertEquals("Wrong pressure data", pressure, response.getMain().getPressure());
-        assertEquals("Wrong humidity data", humidity, response.getMain().getHumidity());
-        assertEquals("Wrong temp_min", temp_min, response.getMain().getTemp_min());
-        assertEquals("Wrong temp_max", temp_max, response.getMain().getTemp_max());
+    @And("the main is")
+    public void check_main(Map<String, String> params) {
+        assertEquals(new BigDecimal(params.get("wrong temperature")), response.getMain().getTemp());
+        assertEquals(new BigDecimal(params.get("wrong atmospheric pressure")), response.getMain().getPressure());
+        assertEquals(new BigDecimal(params.get("wrong humidity")), response.getMain().getHumidity());
+        assertEquals(new BigDecimal(params.get("wrong minimum temperature")), response.getMain().getTemp_min());
+        assertEquals(new BigDecimal(params.get("wrong maximum temperature")), response.getMain().getTemp_max());
     }
 
     @And("visibility is (.*)")
-    public void check_visibility(BigDecimal visibil) {
-        assertEquals("Wrong visibility", visibil, response.getVisibility());
+    public void check_visibility(BigDecimal visibility) {
+        assertEquals("wrong visibility", visibility, response.getVisibility());
 
     }
-    @Then("^the wind speed is (\\\\d+)\\\\.(\\\\d+) and deg is (\\\\d+)$")
-    public void check_wind(BigDecimal speed, BigDecimal deg) {
-        assertEquals("Wrong wind speed data", speed, response.getWind().getSpeed());
-        assertEquals("Wrong wind deg data", deg, response.getWind().getDeg());
+
+    @And("the wind is")
+    public void check_wind(Map<String, String> params) {
+        assertEquals(new BigDecimal(params.get("wrong speed")), response.getWind().getSpeed());
+        assertEquals(new BigDecimal(params.get("wrong direction")), response.getWind().getDeg());
     }
 
     @And("clouds all is (.*)")
     public void check_clouds(BigDecimal all) {
-        assertEquals("Wrong clouds data", all, response.getClouds().getAll());
+        assertEquals("wrong clouds data", all, response.getClouds().getAll());
     }
 
-    @Then("dt is (.*)")
+    @And("dt is (.*)")
     public void check_dt(BigDecimal dtData) {
-        assertEquals("Wrong dt data", dtData, response.getDt());
+        assertEquals("wrong dt data", dtData, response.getDt());
     }
 
-    @And("^the sys type is (\\\\d+) and id is (\\\\d+) message is (\\\\d+)\\\\.(\\\\d+) country is GB and sunrise is (\\\\d+) and sunset is (\\\\d+)$")
-    public void check_sys(BigDecimal type, BigDecimal id, BigDecimal message, String country, BigDecimal sunrise, BigDecimal sunset) {
-        assertEquals("Wrong type", type, response.getSys().getType());
-        assertEquals("Wrong id", id, response.getSys().getId());
-        assertEquals("Wrong message", message, response.getSys().getMessage());
-        assertEquals("Wrong country data", country, response.getSys().getCountry());
-        assertEquals("Wrong sunrise data", sunrise, response.getSys().getSunrise());
-        assertEquals("Wrong sunset data", sunset, response.getSys().getSunset());
-    }
+    @And("the sys is")
+    public void check_sys(Map<String, String> params) {
+        assertEquals(new BigDecimal(params.get("wrong type")), response.getSys().getType());
+        assertEquals(new BigDecimal(params.get("wrong id")), response.getSys().getId());
+        assertEquals(new BigDecimal(params.get("wrong message")), response.getSys().getMessage());
+        assertEquals(params.get("wrong country code"), response.getSys().getCountry());
+        assertEquals(new BigDecimal(params.get("wrong sunrise time")), response.getSys().getSunrise());
+        assertEquals(new BigDecimal(params.get("wrong sunset time")), response.getSys().getSunset());
 
-    @Then("id is (.*)")
+    }
+    @And("id is (.*)")
     public void check_id(BigDecimal id) {
-        assertEquals("Wrong id", id, response.getId());
+        assertEquals("wrong id", id, response.getId());
     }
 
     @And("name is (.*)")
     public void check_name(String name) {
-        assertEquals("Wrong name", name, response.getName());
-
+        assertEquals("wrong name", name, response.getName());
     }
 
-    @Then("cod is (.*)")
+    @And("cod is (.*)")
     public void check_cod(String cod) {
-        assertEquals("Wrong cod", cod, response.getCod());
-
+        assertEquals("wrong cod", cod, response.getCod());
     }
 }
 
