@@ -1,6 +1,5 @@
 package model;
 
-import java.math.BigDecimal;
 import java.util.List;
 
 public class Response {
@@ -8,13 +7,13 @@ public class Response {
     private Wind wind;
     private Clouds clouds;
     private Sys sys;
-    private BigDecimal id;
+    private Integer id;
     private String name;
-    private BigDecimal cod;
+    private Integer cod;
     private Main main;
-    private BigDecimal visibility;
+    private Integer visibility;
     private String base;
-    private BigDecimal dt;
+    private Integer dt;
     private List<Weather> weather;
 
     public List<Weather> getWeather() {
@@ -41,6 +40,13 @@ public class Response {
         this.coord = coord;
     }
 
+    public Integer getDt() {
+        return dt;
+    }
+
+    public void setDt(Integer dt) {
+        this.dt = dt;
+    }
 
     public Wind getWind() {
         return wind;
@@ -83,36 +89,27 @@ public class Response {
         this.main = main;
     }
 
-
-    public BigDecimal getVisibility() {
+    public Integer getVisibility() {
         return visibility;
     }
 
-    public void setVisibility(BigDecimal visibility) {
+    public void setVisibility(Integer visibility) {
         this.visibility = visibility;
     }
 
-    public BigDecimal getDt() {
-        return dt;
-    }
-
-    public void setDt(BigDecimal dt) {
-        this.dt = dt;
-    }
-
-    public BigDecimal getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(BigDecimal id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    public BigDecimal getCod() {
+    public Integer getCod() {
         return cod;
     }
 
-    public void setCod(BigDecimal cod) {
+    public void setCod(Integer cod) {
         this.cod = cod;
     }
 }

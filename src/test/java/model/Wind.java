@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 
 public class Wind {
     private BigDecimal speed;
-    private BigDecimal deg;
+    private Integer deg;
 
     public BigDecimal getSpeed() {
         return speed;
@@ -14,11 +14,11 @@ public class Wind {
         this.speed = speed;
     }
 
-    public BigDecimal getDeg() {
+    public Integer getDeg() {
         return deg;
     }
 
-    public void setDeg(BigDecimal deg) {
+    public void setDeg(Integer deg) {
         this.deg = deg;
     }
 }

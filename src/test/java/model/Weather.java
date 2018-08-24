@@ -3,7 +3,6 @@ package model;
 import java.math.BigDecimal;
 
 public class Weather {
-
     private BigDecimal id;
     private String main;
     private String description;
@@ -36,7 +35,6 @@ public class Weather {
     public BigDecimal getId() {
         return id;
     }
-
     public void setId(BigDecimal id) {
         this.id = id;
     }

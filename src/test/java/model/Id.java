@@ -1,15 +1,13 @@
 package model;
 
-import java.math.BigDecimal;
-
 public class Id {
-    private BigDecimal id;
+    private Integer id;
 
-    public BigDecimal getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(BigDecimal id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 }

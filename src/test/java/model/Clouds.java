@@ -1,16 +1,13 @@
 package model;
 
-import java.math.BigDecimal;
-
 public class Clouds {
+    private Integer all;
 
-    private BigDecimal all;
-
-    public BigDecimal getAll() {
+    public Integer getAll() {
         return all;
     }
 
-    public void setAll(BigDecimal all) {
+    public void setAll(Integer all) {
         this.all = all;
     }
 }
