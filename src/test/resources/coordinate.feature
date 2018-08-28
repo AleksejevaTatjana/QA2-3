@@ -28,7 +28,7 @@ Feature: Testing coordinates for weather
     And the sys is
       | type    | 1          |
       | id      | 5091       |
-      | message | 0.0103     |
+      | message | 0.0103     |                                                                    
       | country | GB         |
       | sunrise | 1485762037 |
       | sunset  | 1485794875 |
