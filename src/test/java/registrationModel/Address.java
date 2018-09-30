@@ -7,6 +7,7 @@ public class Address {
     String zip;
     String street;
 
+
     public String getCountry() {
         return country;
     }

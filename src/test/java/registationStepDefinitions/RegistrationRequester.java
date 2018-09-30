@@ -9,6 +9,7 @@ public class RegistrationRequester {
     public RegistrationResponse getCustomerData() {
         RestTemplate restTemplate = new RestTemplate();
         return restTemplate.postForEntity(URL, RegistrationResponse.class).getBody();
+
     }
 }
 

@@ -5,7 +5,7 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import registrationModel.RegistrationResponse;
-import registrationModel.PositiveResponse;
+
 import java.math.BigDecimal;
 import java.util.Map;
 

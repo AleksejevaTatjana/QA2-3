@@ -19,6 +19,7 @@ public class NegativeResponse {
 
     public void setDetails(String details) {
         this.details = details;
+
     }
 }
 

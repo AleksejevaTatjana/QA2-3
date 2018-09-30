@@ -75,5 +75,6 @@ public class RegistrationResponse {
 
     public void setNegativeResponse(NegativeResponse negativeResponse) {
         this.negativeResponse = negativeResponse;
+
     }
 }
